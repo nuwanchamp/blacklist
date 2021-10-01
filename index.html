@@ -5,8 +5,38 @@
         <title>Webpack App</title>
     </head>
     <body>
-        <h1>Hello world!</h1>
-        <h2>Tip: Check your console</h2>
+        <div class="container ratio ratio-1x1">
+            <div class="row align-items-center">
+                <div class="col-sm-6 offset-3 ">
+                    <div class="main-wrap">
+                        <h3>Black Sheep</h3>
+                        <div class="card  bg-white">
+                            <form class="py-5 px-3 text-left" id="blacklist-form">
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label"> Full Name</label>
+                                    <input name="name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="John Doe">
+                                    <div id="emailHelp" class="form-text">Full name of the candidate</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">NIC number</label>
+                                    <input name="nic" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  placeholder="xxxxxxxxv">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Black Listed date</label>
+                                    <input name="date" type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Reason for blacklist">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">Black List Remark</label>
+                                    <textarea name="remark" type="text" class="form-control" id="exampleInputPassword1"></textarea>
+                                </div>
+                                <button type="button" id="form-submit-btn" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </body>
     
     <script>
