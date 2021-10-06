@@ -37,8 +37,10 @@ const firestore = getFirestore(app);
                 querySnapshot.forEach((doc) => {
                   window.candidates.push({id: doc.id, data : doc.data() });
                 });
+            $('.loader').fadeOut();
             }
         );
+
     $('#blacklist-form').validate({
         rules: {
             "name": { required: true },

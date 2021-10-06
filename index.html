@@ -4,8 +4,29 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Webpack App</title>
+        <style>
+            .loader{
+            display: flex;
+            position: fixed;
+            top:0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 999;
+            justify-content: center;
+            align-items: center;
+            background-color: #f7f7f7;
+                font-family: monospace;
+                text-transform: uppercase;
+        }
+        </style>
     </head>
     <body>
+    <div class="loader">
+        <div class="flex-protect">
+            loading...
+        </div>
+    </div>
         <div class="container pt-5">
             <div class="row align-items-center">
                 <div class="col-sm-6 col-md-4 offset-sm-3  offset-md-4">
