@@ -2,35 +2,86 @@
 <html>
     <head>
         <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Webpack App</title>
     </head>
     <body>
-        <div class="container ratio ratio-1x1">
+        <div class="container pt-5">
             <div class="row align-items-center">
-                <div class="col-sm-6 offset-3 ">
+                <div class="col-sm-6 col-md-4 offset-sm-3  offset-md-4">
                     <div class="main-wrap">
-                        <h3>Black Sheep</h3>
-                        <div class="card  bg-white">
-                            <form class="py-5 px-3 text-left" id="blacklist-form">
-                                <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label"> Full Name</label>
-                                    <input name="name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="John Doe">
-                                    <div id="emailHelp" class="form-text">Full name of the candidate</div>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">NIC number</label>
-                                    <input name="nic" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  placeholder="xxxxxxxxv">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleInputEmail1" class="form-label">Black Listed date</label>
-                                    <input name="date" type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Reason for blacklist">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">Black List Remark</label>
-                                    <textarea name="remark" type="text" class="form-control" id="exampleInputPassword1"></textarea>
-                                </div>
-                                <button type="button" id="form-submit-btn" class="btn btn-primary">Submit</button>
+                        <div class="text-center">
+                            <img style="    transform: rotateY(
+180deg); width: 100px"clas="img-thumbnail" src="images/blacksheep.png"/>
+                        </div>
+                        <h3 class="text-center mb-4"><strong>Black</strong> Sheep</h3>
+                        <div class="card mb-3">
+                            <form autocomplete="off" id="search-form" class="p-2">
+                                <input name="q" type="text" class="form-control suggest-list" id="q" aria-describedby="emailHelp" placeholder="Search...">
+                                <span id="result" style="font-weight: 400;"> </span>
                             </form>
+                            <div class="search-suggestions " style="display: none"></div>
+                        </div>
+                        <div class="card ">
+                            <div class="slider">
+                            <div class="slide-wrapper">
+                                <div class="slide-item">
+                                    <form class="py-5 px-3 text-left" id="blacklist-form">
+                                        <div class="mb-3">
+                                            <label for="exampleInputEmail1" class="form-label"> Full Name</label>
+                                            <input name="name" type="text" class="form-control"  aria-describedby="emailHelp" placeholder="John Doe">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleInputEmail1" class="form-label">NIC number</label>
+                                            <input name="nic" type="text" class="form-control" aria-describedby="emailHelp"  placeholder="xxxxxxxxv">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleInputEmail1" class="form-label">Black Listed date</label>
+                                            <input name="date" type="date" class="form-control" aria-describedby="emailHelp" placeholder="Reason for blacklist">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="exampleInputPassword1" class="form-label">Black List Remark</label>
+                                            <textarea name="remark" type="text" class="form-control" ></textarea>
+                                        </div>
+                                        <button type="button" id="form-submit-btn" class="btn btn-primary">Submit</button>
+                                    </form>
+                                </div>
+                                <div class="slide-item">
+                                    <form class="py-5 px-3 text-left" id="update-form">
+
+                                        <a href="#" class="back-btn d-inline-block text-decoration-none mb-3"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+                                            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+                                        </svg> Back</a>
+                                        <table class="w-100">
+                                            <tr>
+                                                <th> <label for="exampleInputEmail1" class="form-label"> Full Name</label></th>
+                                                <td><input name="name" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="John Doe"></td>
+                                            </tr>
+                                            <tr>
+                                                <th><label for="exampleInputEmail1" class="form-label">NIC number</label></th>
+                                                <td><input name="nic" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"  placeholder="xxxxxxxxv"></td>
+                                            </tr>
+                                            <tr>
+                                                <th><label for="exampleInputEmail1" class="form-label">Black Listed date</label></th>
+                                                <td> <input name="date" type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Reason for blacklist"></td>
+                                            </tr>
+                                            <tr>
+                                                <th><label for="exampleInputPassword1" class="form-label">Black List Remark</label></th>
+                                                <td> <textarea rows="7" name="remark" type="text" class="form-control" id="exampleInputPassword1"></textarea></td>
+                                            </tr>
+                                        </table>
+                                        <input type="hidden" name="docid" value=""/>
+                                        <button type="button" id="form-update-btn" class="btn btn-primary">Update</button>
+                                        <button type="button" id="form-delete-btn" class="btn btn-danger">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash-fill" viewBox="0 0 16 16">
+                                                <path d="M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z"/>
+                                            </svg>
+                                            Delete
+                                        </button>
+                                    </form>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

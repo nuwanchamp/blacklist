@@ -1,5 +1,90 @@
 @import "~bootstrap/scss/bootstrap";
 body{
-  background-color: #f7f7f7;
   color: #2b2b2b;
+  background: #f7f7f7 url("bg.jpg") no-repeat;
+}
+.form-control{
+  background-color: transparent;
+}
+#search-form{
+  input{
+    border: none;
+    &:focus{
+      box-shadow: none;
+    }
+  }
+  button{
+    background: transparent;
+    border: none;
+  }
+  #result{
+    position: relative;
+    display: block;
+    margin-left: -9px;
+    margin-right: -9px;
+    ul{
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-bottom: 0;
+      padding-left: 0;
+      list-style: none;
+      z-index: 9;
+      box-shadow:  1px 7px 14px #e8e8e8;
+      right: 0;
+      background: #fff;
+      border-radius: 5px;
+      li{
+        padding: 10px;
+        &:hover{
+          background-color: $info;
+          cursor: pointer;
+        }
+        + li{
+          border-top: 1px solid #e8e4e4;
+        }
+      }
+    }
+  }
+}
+.slider {
+  overflow: hidden;
+  .slide-wrapper {
+    display: flex;
+    width: 100%;
+    .slide-item {
+      min-width: 100%;
+    }
+  }
+}
+#update-form{
+  .form-control{
+    border: none;
+  }
+  table td, table th{
+    padding: 10px 0;
+    vertical-align: top;
+  }
+  table th{
+    padding-top: 15px;
+  }
+  table tr +tr{
+    border-top: 1px solid #ccc;
+  }
+  .btn{
+    margin-top:20px;
+  }
+}
+// Override Card styles
+.card{
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.72);
+  filter: blur(2);
+}
+.form-control.error{
+  border:1px solid red !important;
+}
+label.error{
+font-size: 12px;
+  color: red;
 }
